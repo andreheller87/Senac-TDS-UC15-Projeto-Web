@@ -7,13 +7,16 @@ import br.senac.escolainfo.model.Professor;
 import br.senac.escolainfo.model.Usuario;
 
 
+
 public class UsuarioMapper {
+
 
 
     public static UsuarioDTO toDTO(Usuario usuario){
 
 
         UsuarioDTO dto = new UsuarioDTO();
+
 
 
         dto.setIdUsuario(
@@ -61,9 +64,11 @@ public class UsuarioMapper {
         }
 
 
+
         return dto;
 
     }
+
 
 
 
@@ -73,6 +78,7 @@ public class UsuarioMapper {
 
 
         Usuario usuario = new Usuario();
+
 
 
         usuario.setIdUsuario(
@@ -101,13 +107,17 @@ public class UsuarioMapper {
 
 
 
+
         if(dto.getIdAluno()!=null){
 
+
             Aluno aluno = new Aluno();
+
 
             aluno.setIdAluno(
                     dto.getIdAluno()
             );
+
 
             usuario.setAluno(aluno);
 
@@ -115,21 +125,27 @@ public class UsuarioMapper {
 
 
 
+
         if(dto.getIdProfessor()!=null){
 
+
             Professor professor = new Professor();
+
 
             professor.setIdProfessor(
                     dto.getIdProfessor()
             );
+
 
             usuario.setProfessor(professor);
 
         }
 
 
+
         return usuario;
 
     }
+
 
 }

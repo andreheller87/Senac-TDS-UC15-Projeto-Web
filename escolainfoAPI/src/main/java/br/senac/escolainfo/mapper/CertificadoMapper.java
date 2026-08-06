@@ -1,13 +1,18 @@
 package br.senac.escolainfo.mapper;
 
+
 import br.senac.escolainfo.dto.CertificadoDTO;
 import br.senac.escolainfo.model.Certificado;
 import br.senac.escolainfo.model.Matricula;
 
+
+
 public class CertificadoMapper {
 
 
-    public static CertificadoDTO toDTO(Certificado certificado) {
+
+    public static CertificadoDTO toDTO(Certificado certificado){
+
 
         CertificadoDTO dto = new CertificadoDTO();
 
@@ -17,7 +22,7 @@ public class CertificadoMapper {
         );
 
 
-        if(certificado.getMatricula() != null){
+        if(certificado.getMatricula()!=null){
 
             dto.setIdMatricula(
                     certificado.getMatricula().getIdMatricula()
@@ -37,11 +42,15 @@ public class CertificadoMapper {
 
 
         return dto;
+
     }
 
 
 
+
+
     public static Certificado toEntity(CertificadoDTO dto){
+
 
         Certificado certificado = new Certificado();
 
@@ -51,22 +60,28 @@ public class CertificadoMapper {
         );
 
 
+
         if(dto.getIdMatricula()!=null){
 
+
             Matricula matricula = new Matricula();
+
 
             matricula.setIdMatricula(
                     dto.getIdMatricula()
             );
+
 
             certificado.setMatricula(matricula);
 
         }
 
 
+
         certificado.setDataEmissao(
                 dto.getDataEmissao()
         );
+
 
 
         certificado.setCodigoVerificacao(
@@ -75,6 +90,8 @@ public class CertificadoMapper {
 
 
         return certificado;
+
     }
+
 
 }

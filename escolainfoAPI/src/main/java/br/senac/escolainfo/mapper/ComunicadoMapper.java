@@ -5,7 +5,9 @@ import br.senac.escolainfo.dto.ComunicadoDTO;
 import br.senac.escolainfo.model.Comunicado;
 
 
+
 public class ComunicadoMapper {
+
 
 
     public static ComunicadoDTO toDTO(Comunicado comunicado){
@@ -14,9 +16,11 @@ public class ComunicadoMapper {
         ComunicadoDTO dto = new ComunicadoDTO();
 
 
+
         dto.setIdComunicado(
                 comunicado.getIdComunicado()
         );
+
 
 
         dto.setTitulo(
@@ -24,9 +28,11 @@ public class ComunicadoMapper {
         );
 
 
+
         dto.setMensagem(
                 comunicado.getMensagem()
         );
+
 
 
         dto.setDataEnvio(
@@ -34,9 +40,12 @@ public class ComunicadoMapper {
         );
 
 
+
         return dto;
 
     }
+
+
 
 
 
@@ -47,9 +56,11 @@ public class ComunicadoMapper {
         Comunicado comunicado = new Comunicado();
 
 
+
         comunicado.setIdComunicado(
                 dto.getIdComunicado()
         );
+
 
 
         comunicado.setTitulo(
@@ -57,9 +68,11 @@ public class ComunicadoMapper {
         );
 
 
+
         comunicado.setMensagem(
                 dto.getMensagem()
         );
+
 
 
         comunicado.setDataEnvio(
@@ -67,8 +80,10 @@ public class ComunicadoMapper {
         );
 
 
+
         return comunicado;
 
     }
+
 
 }

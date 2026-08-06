@@ -6,7 +6,9 @@ import br.senac.escolainfo.model.Matricula;
 import br.senac.escolainfo.model.Pagamento;
 
 
+
 public class PagamentoMapper {
+
 
 
     public static PagamentoDTO toDTO(Pagamento pagamento){
@@ -15,9 +17,11 @@ public class PagamentoMapper {
         PagamentoDTO dto = new PagamentoDTO();
 
 
+
         dto.setIdPagamento(
                 pagamento.getIdPagamento()
         );
+
 
 
         if(pagamento.getMatricula()!=null){
@@ -29,9 +33,11 @@ public class PagamentoMapper {
         }
 
 
+
         dto.setValor(
                 pagamento.getValor()
         );
+
 
 
         dto.setDataPagamento(
@@ -39,9 +45,11 @@ public class PagamentoMapper {
         );
 
 
+
         dto.setStatus(
                 pagamento.getStatus()
         );
+
 
 
         return dto;
@@ -58,15 +66,18 @@ public class PagamentoMapper {
         Pagamento pagamento = new Pagamento();
 
 
+
         pagamento.setIdPagamento(
                 dto.getIdPagamento()
         );
+
 
 
         if(dto.getIdMatricula()!=null){
 
 
             Matricula matricula = new Matricula();
+
 
             matricula.setIdMatricula(
                     dto.getIdMatricula()
@@ -78,9 +89,11 @@ public class PagamentoMapper {
         }
 
 
+
         pagamento.setValor(
                 dto.getValor()
         );
+
 
 
         pagamento.setDataPagamento(
@@ -88,13 +101,16 @@ public class PagamentoMapper {
         );
 
 
+
         pagamento.setStatus(
                 dto.getStatus()
         );
 
 
+
         return pagamento;
 
     }
+
 
 }

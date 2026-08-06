@@ -11,6 +11,7 @@ import br.senac.escolainfo.model.Matricula;
 public class MatriculaMapper {
 
 
+
     public static MatriculaDTO toDTO(Matricula matricula){
 
 
@@ -22,6 +23,7 @@ public class MatriculaMapper {
         );
 
 
+
         if(matricula.getAluno()!=null){
 
             dto.setIdAluno(
@@ -29,6 +31,7 @@ public class MatriculaMapper {
             );
 
         }
+
 
 
         if(matricula.getCurso()!=null){
@@ -40,9 +43,11 @@ public class MatriculaMapper {
         }
 
 
+
         dto.setDataMatricula(
                 matricula.getDataMatricula()
         );
+
 
 
         dto.setStatus(
@@ -50,9 +55,12 @@ public class MatriculaMapper {
         );
 
 
+
         return dto;
 
     }
+
+
 
 
 
@@ -63,16 +71,20 @@ public class MatriculaMapper {
         Matricula matricula = new Matricula();
 
 
+
         matricula.setIdMatricula(
                 dto.getIdMatricula()
         );
+
 
 
         if(dto.getIdAluno()!=null){
 
             Aluno aluno = new Aluno();
 
-            aluno.setIdAluno(dto.getIdAluno());
+            aluno.setIdAluno(
+                    dto.getIdAluno()
+            );
 
             matricula.setAluno(aluno);
 
@@ -80,15 +92,20 @@ public class MatriculaMapper {
 
 
 
+
+
         if(dto.getIdCurso()!=null){
 
             Curso curso = new Curso();
 
-            curso.setIdCurso(dto.getIdCurso());
+            curso.setIdCurso(
+                    dto.getIdCurso()
+            );
 
             matricula.setCurso(curso);
 
         }
+
 
 
         matricula.setDataMatricula(
@@ -96,13 +113,16 @@ public class MatriculaMapper {
         );
 
 
+
         matricula.setStatus(
                 dto.getStatus()
         );
 
 
+
         return matricula;
 
     }
+
 
 }

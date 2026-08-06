@@ -1,60 +1,116 @@
 package br.senac.escolainfo.controller;
 
-import br.senac.escolainfo.model.Pagamento;
+
+import br.senac.escolainfo.dto.PagamentoDTO;
 import br.senac.escolainfo.service.PagamentoService;
+
+
 import jakarta.validation.Valid;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
+
+
 
 @RestController
 @RequestMapping("/api/pagamentos")
 @CrossOrigin("*")
 public class PagamentoController {
 
+
+
     private final PagamentoService service;
 
-    public PagamentoController(PagamentoService service) {
+
+
+    public PagamentoController(PagamentoService service){
+
         this.service = service;
+
     }
+
+
+
+
 
     @GetMapping
-    public List<Pagamento> listar() {
+    public List<PagamentoDTO> listar(){
+
         return service.listar();
+
     }
 
+
+
+
+
     @GetMapping("/{id}")
-    public Pagamento buscar(@PathVariable Integer id) {
+    public PagamentoDTO buscar(
+            @PathVariable Integer id
+    ){
+
         return service.buscar(id);
+
     }
+
+
+
+
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Pagamento salvar(@Valid @RequestBody Pagamento pagamento) {
-        return service.salvar(pagamento);
+    public PagamentoDTO salvar(
+            @Valid @RequestBody PagamentoDTO dto
+    ){
+
+        return service.salvar(dto);
+
     }
+
+
+
+
 
     @PutMapping("/{id}")
-    public Pagamento atualizar(
+    public PagamentoDTO atualizar(
             @PathVariable Integer id,
-            @Valid @RequestBody Pagamento pagamento) {
+            @Valid @RequestBody PagamentoDTO dto
+    ){
 
-        Pagamento existente = service.buscar(id);
 
-        existente.setMatricula(pagamento.getMatricula());
-        existente.setValor(pagamento.getValor());
-        existente.setDataPagamento(pagamento.getDataPagamento());
-        existente.setStatus(pagamento.getStatus());
+        PagamentoDTO existente = service.buscar(id);
+
+
+        existente.setIdMatricula(dto.getIdMatricula());
+
+        existente.setValor(dto.getValor());
+
+        existente.setDataPagamento(dto.getDataPagamento());
+
+        existente.setStatus(dto.getStatus());
+
 
         return service.salvar(existente);
+
     }
+
+
+
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void excluir(@PathVariable Integer id) {
+    public void excluir(
+            @PathVariable Integer id
+    ){
+
         service.excluir(id);
+
     }
+
 
 }
