@@ -1,4 +1,4 @@
-package br.senac.escolainfoAPI;
+package br.senac.escolainfo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
