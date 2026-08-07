@@ -1,0 +1,507 @@
+/* ==================================================
+   ESCOLAINFO WEB
+   STYLE PRINCIPAL
+================================================== */
+
+
+/* ==========================
+   VARIÁVEIS
+========================== */
+
+:root{
+
+    --sidebar:#6D1FBF;
+    --header:#BF1FB5;
+    --gold:#BF9F1F;
+    --hover:#BFBF1F;
+    --background:#FFFFFF;
+
+    --text:#333;
+
+    --shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+/* ==========================
+   RESET
+========================== */
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+body{
+
+    background:#f7f7fb;
+    color:var(--text);
+
+}
+
+
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:250px;
+
+    height:100vh;
+
+    background:var(--sidebar);
+
+    padding:25px 15px;
+
+    transition:.3s;
+
+    z-index:1000;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+
+.logo{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    padding-left:10px;
+
+}
+
+
+
+.logo i{
+
+    font-size:32px;
+
+    color:#fff;
+
+}
+
+
+
+
+/* ==========================
+   MENU
+========================== */
+
+
+.sidebar nav{
+
+    margin-top:30px;
+
+}
+
+
+
+.menu{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    padding:14px 15px;
+
+
+    margin-bottom:8px;
+
+
+    color:white;
+
+    text-decoration:none;
+
+
+    border-radius:12px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.menu i{
+
+    width:25px;
+
+    font-size:18px;
+
+}
+
+
+
+.menu:hover,
+.menu.active{
+
+
+    background:rgba(255,255,255,.18);
+
+    transform:translateX(5px);
+
+
+}
+
+
+
+/* ==========================
+   CONTEÚDO
+========================== */
+
+
+.content{
+
+
+    margin-left:250px;
+
+
+    min-height:100vh;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+/* ==========================
+   HEADER
+========================== */
+
+
+.topbar{
+
+
+    height:75px;
+
+
+    background:var(--header);
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+    padding:0 30px;
+
+
+    color:white;
+
+
+    box-shadow:var(--shadow);
+
+
+}
+
+
+
+
+.btn-menu{
+
+
+    background:none;
+
+
+    border:0;
+
+
+    color:white;
+
+
+    font-size:25px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+/* ==========================
+   USUÁRIO
+========================== */
+
+
+.user-area{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+}
+
+
+
+.user-area small{
+
+
+    display:block;
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+.avatar{
+
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+    border:3px solid white;
+
+
+}
+
+
+
+
+
+/* ==========================
+   NOTIFICAÇÃO
+========================== */
+
+
+.notification{
+
+
+    position:relative;
+
+    font-size:22px;
+
+
+}
+
+
+
+.notification span{
+
+
+    position:absolute;
+
+
+    top:-8px;
+
+    right:-10px;
+
+
+    background:var(--gold);
+
+
+    color:white;
+
+
+    width:18px;
+
+    height:18px;
+
+
+    border-radius:50%;
+
+
+    font-size:11px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+/* ==========================
+   MAIN
+========================== */
+
+
+.dashboard{
+
+
+    padding:30px;
+
+
+}
+
+
+
+.dashboard h2{
+
+
+    font-size:28px;
+
+    font-weight:600;
+
+
+}
+
+
+
+.subtitle{
+
+
+    color:#777;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+/* ==========================
+   SIDEBAR MOBILE
+========================== */
+
+
+@media(max-width:992px){
+
+
+.sidebar{
+
+
+    left:-260px;
+
+
+}
+
+
+
+.sidebar.show{
+
+
+    left:0;
+
+
+}
+
+
+
+
+.content{
+
+
+    margin-left:0;
+
+
+}
+
+
+
+.topbar{
+
+
+    padding:0 15px;
+
+
+}
+
+
+
+.dashboard{
+
+
+    padding:20px;
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+.user-area div{
+
+
+    display:none;
+
+
+}
+
+
+
+.dashboard h2{
+
+
+    font-size:22px;
+
+
+}
+
+
+}
